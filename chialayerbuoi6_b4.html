@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Cá Nhân</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(to right, #333, #555);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            background: #444;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            background: #666;
+            border-radius: 5px;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background: #555;
+            min-width: 150px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            text-align: left;
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .avatar img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #444;
+        }
+        .info {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .info p {
+            font-size: 16px;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        .home-button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #434648;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .home-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-user"></i> Chào mừng đến với trang web cá nhân</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Trang chủ</a></li>
+            <li><a href="#"><i class="fas fa-user"></i> Giới thiệu</a></li>
+            <li><a href="#"><i class="fas fa-cogs"></i> Dịch vụ</a></li>
+            <li>
+                <a href="#"><i class="fas fa-info-circle"></i> Thông tin &#9662;</a>
+                <ul class="dropdown">
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Học vấn</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i> Sở thích</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-envelope"></i> Liên hệ &#9662;</a>
+                <ul class="dropdown">
+                    <li><a href="mailto:lillaby20506@gmail.com"><i class="fas fa-envelope"></i> Gmail</a></li>
+                    <li><a href="https://www.facebook.com/lucy.linh.589" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="avatar">
+            <img src="d:\\Ảnh\\z5904954450270_b21c7a8321e5b31f0683acc0ed6110cd.jpg" alt="Ảnh đại diện">
+        </div>
+        <h2>Nguyễn Quang Nghĩa</h2>
+        <div class="info">
+            <p><strong>Ngành:</strong> CNTT D2024A</p>
+            <p><strong>Điện thoại:</strong> 0368170661</p>
+            <p><strong>Email:</strong> lillaby20506@gmail.com</p>
+            <h2>Học Vấn</h2>
+            <p><strong>Trường:</strong> Đại học Thủ đô Hà Nội</p>
+            <p><strong>Khoa:</strong> Công nghệ thông tin</p>
+            <h2>Sở thích</h2>
+            <ul>
+                <li><i class="fas fa-music"></i> Nghe nhạc</li>
+                <li><i class="fas fa-bed"></i> Ngủ</li>
+                <li><i class="fas fa-gamepad"></i> Chơi game</li>
+                <li><i class="fas fa-cookie"></i> Ăn vặt</li>
+                <li><i class="fas fa-film"></i> Xem phim</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Nguyen Quang Nghia.</p>
+    </footer>
+    <a href="#top" class="home-button"><i class="fas fa-arrow-up"></i> Đầu Trang</a>
+</body>
+</html>

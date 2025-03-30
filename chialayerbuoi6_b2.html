@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.7); 
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Futura', sans-serif;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            position: relative;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 15px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .menu a::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: white;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .menu a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.9);
+            list-style: none;
+            padding: 10px 0;
+            width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            padding: 10px 20px;
+        }
+
+        .dropdown-menu a {
+            color: white;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://lamphimquangcao.tv/wp-content/uploads/2018/05/thoi-trang-lam-phim-quang-cao-2018.jpg'); 
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .content {
+            padding-top: 150px;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .content button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .content button:hover {
+            background: gray;
+            color: white;
+        }
+        .arrivals {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #111; 
+}
+
+.arrivals h2 {
+    font-size: 32px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.arrivals p {
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.arrival-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.arrival-item {
+    background: #222;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.image-container:hover .hover-image {
+    opacity: 1;
+}
+
+h3 {
+    color: white;
+    margin: 10px 0;
+}
+
+p {
+    color: gray;
+}
+
+span {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+.hero {
+    width: 100vw; /* Chiều rộng toàn màn hình */
+    height: 100vh; /* Chiều cao toàn màn hình */
+    background-image: url('https://lamphimquangcao.tv/wp-content/uploads/2018/05/thoi-trang-lam-phim-quang-cao-2018.jpg'); /* Đường dẫn đến ảnh */
+    background-size: cover; /* Ảnh phủ kín toàn bộ phần tử */
+    background-position: center; /* Canh giữa ảnh */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Kalium</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Shop ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Product ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Variants</a></li>
+                        <li><a href="#">Pagination</a></li>
+                        <li><a href="#">Cart Icon</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Buy Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="background-image">
+        <div class="hero">
+            <h1>Monochrome Collection</h1>
+        </div>        
+    </div>
+
+    <div class="content">
+        <h1>Monochrome Collection</h1>
+        <button>SHOP NOW</button>
+    </div>
+    <section class="arrivals">
+        <h2>New Arrivals</h2>
+        <p>Latest From our Store</p>
+        <div class="arrival-container">
+            <div class="arrival-item">
+                <div class="image-container">
+                    <img src="https://i.pinimg.com/736x/e8/fc/e5/e8fce56afe2a2f146249c74e5dc08efb.jpg" class="front-image">
+                    <img src="https://i.pinimg.com/736x/9b/3f/2d/9b3f2d4dcb6d1482970d4817e40904d7.jpg" class="hover-image">
+                </div>
+                <h3>Broken T Shirt</h3>
+                <p>Men, T Shirts</p>
+                <span>$9</span>
+            </div>
+    
+            <div class="arrival-item">
+                <div class="image-container">
+                    <img src="https://i.pinimg.com/736x/68/f8/a3/68f8a3ce25f7c5c90000f51976fbd0a0.jpg" class="front-image">
+                    <img src="https://i.pinimg.com/736x/9d/c1/a4/9dc1a4d77396bc33c3adc14c8186f62c.jpg" class="hover-image">
+                </div>
+                <h3>Cuban shirt</h3>
+                <p>Men, Shirt</p>
+                <span>$25</span>
+            </div>
+    
+            <div class="arrival-item">
+                <div class="image-container">
+                    <img src="https://i.pinimg.com/736x/85/f5/e8/85f5e841005db79787e692d157222119.jpg" class="front-image">
+                    <img src="https://i.pinimg.com/736x/1b/6a/cf/1b6acf5a155463bcc051053679aa42a0.jpg" class="hover-image">
+                </div>
+                <h3>white Shirt</h3>
+                <p>Accessories</p>
+                <span>$7</span>
+            </div>
+    
+            <div class="arrival-item">
+                <div class="image-container">
+                    <img src="https://i.pinimg.com/736x/08/6a/aa/086aaafe52b7f587032dc48c264f83a1.jpg" class="front-image">
+                    <img src="https://i.pinimg.com/736x/08/4c/69/084c6999125b8f3c62259b4cd02ee67e.jpg" class="hover-image">
+                </div>
+                <h3>Chambray Shirt</h3>
+                <p>Men, Sweaters</p>
+                <span>$29</span>
+            </div>
+        </div>
+    </section>    
+</body>
+</html>
